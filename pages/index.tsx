@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Layout } from '../components/common'
 import LoginForm from "../components/LoginForm";
 import Todo from "../components/Todo";
+import Homer from "../components/Homer";
 import { useUserContext } from "../contexts/UserContext";
 import { Container, Text } from '../components/ui'
 
@@ -29,6 +30,7 @@ export default function Home() {
         <div className="h-1 mx-auto bg-white w-1/4  my-0 py-0 rounded-t">
 
         {!user ? <LoginForm /> : <Todo />}
+        {user ? <Homer /> : <Todo/>}
         </div>
       </div>
 
