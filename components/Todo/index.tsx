@@ -165,7 +165,7 @@ export default function Todo() {
             )}
           </div>
         ) : (
-          <Typography>{"No tasks here :')"}</Typography>
+          <Typography>{"Add new business fuction"}</Typography>
         )}
 
         <Button

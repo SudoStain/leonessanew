@@ -33,6 +33,10 @@ export default function Home() {
         
         
         </div>
+
+      </div>
+      <div className=" mb-4">
+  
         <div className="h-1 mx-auto bg-white w-1/4  my-0 py-0 rounded-t">
 
 
