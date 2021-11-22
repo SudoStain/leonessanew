@@ -1,0 +1,24 @@
+.link {
+    @apply inline-flex items-center leading-6
+    transition ease-in-out duration-75 cursor-pointer
+    text-accent-5;
+    font-size: 13px;
+  }
+  
+  .link:hover {
+    @apply text-accent-9;
+  }
+  
+  .link:focus {
+    @apply outline-none text-accent-8;
+  }
+
+  .menu {
+    @apply transition-colors bg-primary w-full h-screen fixed pt-7 border-b-4 ;
+
+  }
+
+  .menuLi {
+    @apply  p-6 border-t border-gray-400;
+
+  }
