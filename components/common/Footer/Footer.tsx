@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import type { Page } from '../../../framework/commerce/types/page'
 import getSlug from '../../../lib/get-slug'
 
-import { Logo, Container } from '../../../components/ui'
+import { Container } from '../../../components/ui'
 
 import s from './Footer.module.css'
 import {Grid, Row, Col,} from 'react-styled-flexboxgrid'
