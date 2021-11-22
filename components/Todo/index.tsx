@@ -128,7 +128,7 @@ export default function Todo() {
       <Spaced spacing={2} className={classes.root}>
         {user && (
           <Typography variant="overline">
-            <strong>{`Todos by: ${user.username}`}</strong>
+            <strong>{`Welcome: ${user.username}`}</strong>
           </Typography>
         )}
         {transitions.length > 0 ? (
