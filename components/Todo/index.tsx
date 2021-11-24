@@ -128,6 +128,7 @@ export default function Todo() {
       <Spaced spacing={2} className={classes.root}>
         {user && (
           <Typography variant="overline">
+           <p> <strong>{`Welcome: ${user.username}`}</strong></p>
             <strong>{`Welcome: ${user.username}`}</strong>
           </Typography>
         )}

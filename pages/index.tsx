@@ -27,7 +27,7 @@ export default function Home() {
         Login Page
       </h1>
       <div className=" mb-4">
-        <div className="h-1 mx-auto bg-white w-1/4  my-0 py-0 rounded-t">
+        <div className="h-1 mx-auto w-1/4  my-0 py-0 rounded-t">
 
         {!user ? <LoginForm /> : <Todo />}
         
@@ -37,7 +37,7 @@ export default function Home() {
       </div>
       <div className=" mb-4">
   
-        <div className="h-1 mx-auto bg-white w-1/4  my-0 py-0 rounded-t">
+        <div className="h-1 mx-auto w-1/4  my-0 py-0 rounded-t">
 
 
 

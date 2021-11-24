@@ -3,11 +3,24 @@ import Link from 'next/link'
 import s from './Navbar.module.css'
 import NavbarRoot from './NavbarRoot'
 import { Container } from '../../../components/ui'
+import {
+  AppBar,
+  createStyles,
+  IconButton,
+  LinearProgress,
+  makeStyles,
+  Menu,
+
+  MenuItem,
+} from "@material-ui/core";
 
 import Image from 'next/image'
 import styled from 'styled-components'
-import Menu from '../../../components/Menu/Menu'
+import MenuMenu from '../../../components/Menu/MenuMenu'
+import { useUserContext } from "../../../contexts/UserContext";
+import React from "react";
 
+import AccountCircle from "@material-ui/icons/AccountCircle";
 
 const LogoDiv = styled.div`
 padding-top 5px;
@@ -59,11 +72,20 @@ const links3 = [
 
 const Navbar: FC<NavbarProps> = () => {
   const [open, setOpen] = useState<boolean>(false)
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+  const { user, logout } = useUserContext();
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <NavbarRoot>
       <Container>
-        <Menu open={open} setOpen={setOpen}></Menu>
+        <MenuMenu open={open} setOpen={setOpen}></MenuMenu>
         <div className={s.nav}>
           <div className="flex items-center">
             <LogoDiv>
@@ -106,6 +128,47 @@ const Navbar: FC<NavbarProps> = () => {
           </div> */}
           <div className="flex items-center justify-end flex-2"></div>
         </div>
+        <AppBar  position="static">
+        {user && (
+          <>
+            <IconButton
+            
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleClick}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem
+                onClick={() => {
+                  handleClose();
+                  logout();
+                }}
+              >
+                Logout
+              </MenuItem>
+            </Menu>
+          </>
+        )}
+      </AppBar>
+        
       </Container>
     </NavbarRoot>
   )

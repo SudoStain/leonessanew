@@ -79,7 +79,7 @@ export type Props = {
   setOpen: (v: boolean) => void
 }
 
-const Menu = (props: Props) => {
+const MenuMenu = (props: Props) => {
   const node = useRef<HTMLDivElement>(null)
   useOnClickOutside(node, () => props.setOpen(false))
 
@@ -116,4 +116,4 @@ const Menu = (props: Props) => {
   )
 }
 
-export default Menu
+export default MenuMenu
