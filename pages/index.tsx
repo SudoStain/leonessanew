@@ -41,7 +41,7 @@ export default function Home() {
 
 
 
-{!user ? <LoginForm /> : <Homer/>}
+{/* {!user ? <LoginForm /> : <Homer/>} */}
 </div>
       </div>
 
